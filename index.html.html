@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giacomo Giusto Educatore Cinofilo | Metodo Gentile</title>
+    <meta name="description" content="Giacomo Giusto Educatore Cinofilo ad Acquaviva delle Fonti e online in tutta Italia. Percorsi educativi, lezioni a domicilio e consulenze con metodo gentile.">
+    
+    <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for crisp icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: {
+                            DEFAULT: '#2D5A27',
+                            light: '#3E7A36',
+                            dark: '#1F3F1B',
+                            soft: '#EAF2E9'
+                        },
+                        cream: {
+                            DEFAULT: '#FAF8F5',
+                            dark: '#F1EDE6'
+                        },
+                        amber: {
+                            DEFAULT: '#D97706',
+                            hover: '#B45309',
+                            soft: '#FEF3C7'
+                        },
+                        slate: {
+                            DEFAULT: '#1E293B',
+                            muted: '#475569'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Outfit', 'sans-serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FAF8F5;
+            color: #1E293B;
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Outfit', sans-serif;
+        }
+        .nav-link-active {
+            color: #2D5A27;
+            font-weight: 700;
+            position: relative;
+        }
+        .nav-link-active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #D97706;
+            border-radius: 999px;
+        }
+        .card-hover {
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px -8px rgba(45, 90, 39, 0.14);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-forest selection:text-white">
+
+    <!-- STICKY HEADER & NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-cream/95 backdrop-blur-md border-b border-stone-200/80 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo / Brand -->
+                <a href="#home-page" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-2xl bg-forest text-white flex items-center justify-center shadow-md group-hover:bg-forest-dark transition-colors">
+                        <i class="fa-solid fa-paw text-xl"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-heading font-bold text-lg sm:text-xl text-slate leading-tight tracking-tight">Giacomo Giusto</span>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-forest">Educatore Cinofilo</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center gap-7" aria-label="Menu principale">
+                    <a href="#home-page" class="nav-link text-sm font-semibold text-slate-muted hover:text-forest transition-colors py-1">Home Page</a>
+                    <a href="#chi-sono" class="nav-link text-sm font-semibold text-slate-muted hover:text-forest transition-colors py-1">Chi Sono</a>
+                    <a href="#servizi" class="nav-link text-sm font-semibold text-slate-muted hover:text-forest transition-colors py-1">Servizi</a>
+                    <a href="#consulenze" class="nav-link text-sm font-semibold text-slate-muted hover:text-forest transition-colors py-1">Consulenze</a>
+                    <a href="#percorsi-educativi" class="nav-link text-sm font-semibold text-slate-muted hover:text-forest transition-colors py-1">Percorsi Educativi</a>
+                    <a href="#contatti" class="nav-link text-sm font-semibold text-slate-muted hover:text-forest transition-colors py-1">Contatti</a>
+                </nav>
+
+                <!-- Quick CTA Desktop -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="https://wa.me/393281224016?text=Ciao%20Giacomo%2C%20vorrei%20avere%20informazioni%20sui%20tuoi%20percorsi%20educativi." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-forest hover:bg-forest-dark text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-sm transition-all">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Scrivimi</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <button id="mobile-menu-btn" type="button" class="lg:hidden p-2.5 rounded-xl text-slate hover:bg-cream-dark focus:outline-none focus:ring-2 focus:ring-forest" aria-expanded="false" aria-label="Apri menu">
+                    <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-cream border-t border-stone-200 px-4 pt-3 pb-6 space-y-2 shadow-lg">
+            <a href="#home-page" class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-slate hover:bg-forest-soft hover:text-forest">Home Page</a>
+            <a href="#chi-sono" class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-slate hover:bg-forest-soft hover:text-forest">Chi Sono</a>
+            <a href="#servizi" class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-slate hover:bg-forest-soft hover:text-forest">Servizi</a>
+            <a href="#consulenze" class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-slate hover:bg-forest-soft hover:text-forest">Consulenze</a>
+            <a href="#percorsi-educativi" class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-slate hover:bg-forest-soft hover:text-forest">Percorsi Educativi</a>
+            <a href="#contatti" class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-slate hover:bg-forest-soft hover:text-forest">Contatti</a>
+            <div class="pt-2">
+                <a href="https://wa.me/393281224016?text=Ciao%20Giacomo%2C%20vorrei%20prenotare%20la%20consulenza%20gratuita." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full bg-forest text-white font-semibold py-3.5 rounded-xl shadow">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span>Contattami su WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home-page" class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 bg-gradient-to-b from-forest-soft/60 via-cream to-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Text Column -->
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-forest-soft border border-forest/20 text-forest font-semibold text-xs sm:text-sm mb-6">
+                        <i class="fa-solid fa-leaf"></i>
+                        <span>Approccio Cognitivo-Relazionale • Metodo Gentile</span>
+                    </div>
+                    
+                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate tracking-tight leading-[1.12] mb-6">
+                        Giacomo Giusto <br>
+                        <span class="text-forest">Educatore Cinofilo</span>
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl text-slate-muted leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
+                        Aiuto le persone a migliorare e costruire una relazione corretta e serena con il proprio cane attraverso il <strong class="text-slate font-semibold">metodo gentile</strong>.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#consulenze" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-amber hover:bg-amber-hover text-white font-bold px-7 py-4 rounded-2xl shadow-lg shadow-amber/20 transition-all text-base">
+                            <i class="fa-regular fa-calendar-check text-lg"></i>
+                            <span>Prenota Consulenza Gratuita</span>
+                        </a>
+                        <a href="#servizi" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-cream-dark text-slate border border-stone-300 font-bold px-7 py-4 rounded-2xl transition-all text-base">
+                            <span>Scopri i Servizi</span>
+                            <i class="fa-solid fa-arrow-down text-sm text-forest"></i>
+                        </a>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="mt-10 pt-8 border-t border-stone-200/80 grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-forest-soft text-forest flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-house-chimney"></i>
+                            </div>
+                            <span class="text-sm font-medium text-slate">A domicilio ad Acquaviva delle Fonti e dintorni</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-amber-soft text-amber flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-video"></i>
+                            </div>
+                            <span class="text-sm font-medium text-slate">Consulenze Online in tutta Italia</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-forest-soft text-forest flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                            <span class="text-sm font-medium text-slate">100% Rispetto, Empatia e Fiducia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Card -->
+                <div class="lg:col-span-5">
+                    <div class="relative bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-stone-200/70">
+                        <div class="aspect-[4/3] rounded-2xl bg-gradient-to-br from-forest to-forest-dark overflow-hidden relative flex flex-col items-center justify-center text-white p-6 text-center">
+                            <!-- Decorative SVG Paw & Nature Motif -->
+                            <svg class="w-24 h-24 text-white/90 mb-4" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true">
+                                <path d="M32 34c-6.6 0-12 5.4-12 12 0 4.4 3.6 8 8 8h8c4.4 0 8-3.6 8-8 0-6.6-5.4-12-12-12zm-15-6c3.3 0 6-3.1 6-7s-2.7-7-6-7-6 3.1-6 7 2.7 7 6 7zm30 0c3.3 0 6-3.1 6-7s-2.7-7-6-7-6 3.1-6 7 2.7 7 6 7zm-21-8c3.3 0 6-3.6 6-8s-2.7-8-6-8-6 3.6-6 8 2.7 8 6 8zm12 0c3.3 0 6-3.6 6-8s-2.7-8-6-8-6 3.6-6 8 2.7 8 6 8z"/>
+                            </svg>
+                            <p class="font-heading font-bold text-xl sm:text-2xl">Ascolto, Empatia e Collaborazione</p>
+                            <p class="text-sm text-white/85 mt-2 max-w-xs">Capire il linguaggio del cane per vivere ogni giorno in armonia.</p>
+                        </div>
+                        
+                        <div class="mt-6 flex items-center justify-between gap-4 bg-cream p-4 rounded-2xl border border-stone-200/60">
+                            <div>
+                                <p class="text-xs font-bold uppercase tracking-wider text-amber">Primo passo insieme</p>
+                                <p class="font-heading font-bold text-slate text-base">Consulenza Conoscitiva Gratuita</p>
+                            </div>
+                            <a href="https://wa.me/393281224016?text=Ciao%20Giacomo%2C%20vorrei%20prenotare%20la%20prima%20consulenza%20conoscitiva%20gratuita%20di%2030%20minuti." target="_blank" rel="noopener noreferrer" class="shrink-0 w-11 h-11 rounded-xl bg-forest text-white flex items-center justify-center hover:bg-forest-dark transition-colors" title="Prenota su WhatsApp">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: CHI SONO -->
+    <section id="chi-sono" class="py-20 bg-white border-y border-stone-200/70">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-xs font-bold uppercase tracking-widest text-amber">La mia storia e la mia missione</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate mt-2">Chi sono</h2>
+                <div class="w-16 h-1.5 bg-forest rounded-full mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                <!-- Story Cards -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="bg-cream p-6 sm:p-8 rounded-3xl border border-stone-200/70 shadow-sm">
+                        <div class="flex items-start gap-4">
+                            <div class="w-11 h-11 rounded-2xl bg-forest text-white flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <p class="text-slate leading-relaxed text-base sm:text-lg">
+                                Mi chiamo <strong>Giacomo Giusto (classe 1984)</strong> e sono cresciuto con un amore viscerale per i cani. Negli anni ho coltivato questa passione frequentando costantemente stage, corsi e webinar, fino a quando, nel <strong>2023</strong>, ho coronato il mio percorso formandomi ufficialmente come <strong>Educatore Cinofilo</strong>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-forest-soft/60 p-6 sm:p-8 rounded-3xl border border-forest/20 shadow-sm">
+                        <div class="flex items-start gap-4">
+                            <div class="w-11 h-11 rounded-2xl bg-amber text-white flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-person-walking-with-cane"></i>
+                            </div>
+                            <p class="text-slate leading-relaxed text-base sm:text-lg">
+                                Accanto a me in questo viaggio ci sono sempre state <strong>due stampelle</strong>. Ma se te lo stai chiedendo... <strong>sì, sono a tutti gli effetti un educatore cinofilo!</strong> Ogni singolo giorno mi impegno a superare i miei limiti e a migliorarmi, trasformando le difficoltà in punti di forza.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-cream p-6 sm:p-8 rounded-3xl border border-stone-200/70 shadow-sm">
+                        <div class="flex items-start gap-4">
+                            <div class="w-11 h-11 rounded-2xl bg-forest text-white flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-dog"></i>
+                            </div>
+                            <div class="space-y-4 text-slate leading-relaxed text-base sm:text-lg">
+                                <p>
+                                    Nella mia vita ho avuto la fortuna di condividere la strada con due cani straordinari:
+                                </p>
+                                <ul class="space-y-2.5 pl-1">
+                                    <li class="flex items-start gap-3">
+                                        <i class="fa-solid fa-paw text-amber mt-1.5 text-sm"></i>
+                                        <span><strong>Una meticcia speciale</strong>, che è rimasta al mio fianco per oltre 15 anni.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <i class="fa-solid fa-paw text-amber mt-1.5 text-sm"></i>
+                                        <span><strong>Il Pastore Tedesco</strong> che vedete in questi video e foto, che ha riempito la mia vita per 11 anni e con cui ho affrontato i miei primi percorsi educativi.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-cream p-6 sm:p-8 rounded-3xl border border-stone-200/70 shadow-sm">
+                        <div class="flex items-start gap-4">
+                            <div class="w-11 h-11 rounded-2xl bg-forest text-white flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <p class="text-slate leading-relaxed text-base sm:text-lg">
+                                Attualmente non ho cani, ma dedico tutta la mia energia e la mia esperienza a supportare voi e i vostri compagni a quattro zampe. Svolgo la mia attività principalmente <strong>a domicilio ad Acquaviva delle Fonti e nei paesi limitrofi</strong>. Inoltre, posso aiutare anche i proprietari più lontani offrendo <strong>consulenze e percorsi educativi personalizzati online</strong>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Video & Photo Showcase / YouTube Channel -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="bg-cream rounded-3xl p-6 sm:p-7 border border-stone-200/80 shadow-md">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-heading font-bold text-xl text-slate">I miei Video & Ricordi</h3>
+                            <span class="inline-flex items-center gap-1.5 text-xs font-bold text-red-600 bg-red-50 px-3 py-1 rounded-full">
+                                <i class="fa-brands fa-youtube"></i> YouTube
+                            </span>
+                        </div>
+                        <p class="text-sm text-slate-muted mb-5 leading-relaxed">
+                            Sul mio canale YouTube condivido esperienze, consigli pratici sul metodo gentile e momenti vissuti insieme al mio amato Pastore Tedesco.
+                        </p>
+
+                        <!-- Video Showcase Card -->
+                        <div class="rounded-2xl overflow-hidden bg-slate text-white border border-stone-300 shadow-inner">
+                            <div class="aspect-video bg-gradient-to-tr from-slate via-forest-dark to-forest flex flex-col items-center justify-center p-6 text-center relative">
+                                <a href="https://www.youtube.com/@giacomogiustoeducatorecinofilo" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center">
+                                    <div class="w-16 h-16 rounded-full bg-red-600 group-hover:bg-red-500 group-hover:scale-110 transition-all flex items-center justify-center shadow-lg mb-3">
+                                        <i class="fa-solid fa-play text-white text-xl ml-1"></i>
+                                    </div>
+                                    <span class="font-heading font-bold text-lg text-white">Guarda i video sul Canale YouTube</span>
+                                    <span class="text-xs text-white/80 mt-1">@giacomogiustoeducatorecinofilo</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Photo Placeholder Slots for easy future customization -->
+                        <div class="grid grid-cols-2 gap-3 mt-4">
+                            <div class="bg-white p-4 rounded-2xl border border-stone-200 text-center">
+                                <div class="w-10 h-10 rounded-full bg-forest-soft text-forest flex items-center justify-center mx-auto mb-2">
+                                    <i class="fa-solid fa-shield-dog"></i>
+                                </div>
+                                <p class="font-heading font-bold text-sm text-slate">11 Anni Insieme</p>
+                                <p class="text-xs text-slate-muted mt-0.5">Il mio Pastore Tedesco e i primi percorsi educativi</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-2xl border border-stone-200 text-center">
+                                <div class="w-10 h-10 rounded-full bg-amber-soft text-amber flex items-center justify-center mx-auto mb-2">
+                                    <i class="fa-solid fa-heart-pulse"></i>
+                                </div>
+                                <p class="font-heading font-bold text-sm text-slate">15+ Anni Insieme</p>
+                                <p class="text-xs text-slate-muted mt-0.5">La mia meticcia speciale, compagna di vita</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-6">
+                            <a href="https://www.youtube.com/@giacomogiustoeducatorecinofilo" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-slate hover:bg-slate/90 text-white font-semibold py-3.5 px-5 rounded-xl transition-colors text-sm">
+                                <i class="fa-brands fa-youtube text-red-500 text-lg"></i>
+                                <span>Iscriviti al Canale YouTube</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: SERVIZI -->
+    <section id="servizi" class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-xs font-bold uppercase tracking-widest text-forest">Trasparenza e flessibilità</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate mt-2">I Miei Servizi</h2>
+                <p class="text-slate-muted mt-4 text-base sm:text-lg">
+                    Interventi su misura direttamente nell'ambiente in cui il cane vive o comodamente da casa tua in tutta Italia.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Servizio 1: Lezione Singola a Domicilio -->
+                <div class="bg-white rounded-3xl p-8 border border-stone-200/80 shadow-sm card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-forest-soft text-forest flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-house-user text-2xl"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-slate mb-2">Lezioni Individuali a Domicilio</h3>
+                        <div class="flex items-baseline gap-1 my-4">
+                            <span class="font-heading text-4xl font-extrabold text-forest">20€</span>
+                            <span class="text-slate-muted font-medium">/ a lezione</span>
+                        </div>
+                        <p class="text-slate-muted text-sm leading-relaxed mb-6">
+                            Lavoriamo direttamente a casa tua e nel tuo quartiere, dove il cane esprime i suoi comportamenti reali.
+                        </p>
+                        <div class="bg-cream p-4 rounded-2xl border border-stone-200/70 mb-6">
+                            <p class="text-xs font-bold uppercase tracking-wider text-slate mb-2">Comuni coperti (entro 5-10 km):</p>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="text-xs font-semibold bg-white text-forest px-2.5 py-1 rounded-lg border border-stone-200">Acquaviva delle Fonti</span>
+                                <span class="text-xs font-medium bg-white text-slate-muted px-2.5 py-1 rounded-lg border border-stone-200">Cassano delle Murge</span>
+                                <span class="text-xs font-medium bg-white text-slate-muted px-2.5 py-1 rounded-lg border border-stone-200">Sammichele di Bari</span>
+                                <span class="text-xs font-medium bg-white text-slate-muted px-2.5 py-1 rounded-lg border border-stone-200">Casamassima</span>
+                                <span class="text-xs font-medium bg-white text-slate-muted px-2.5 py-1 rounded-lg border border-stone-200">Santeramo in Colle</span>
+                                <span class="text-xs font-medium bg-white text-slate-muted px-2.5 py-1 rounded-lg border border-stone-200">Gioia del Colle</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/393281224016?text=Ciao%20Giacomo%2C%20vorrei%20prenotare%20una%20Lezione%20Individuale%20a%20Domicilio." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-forest hover:bg-forest-dark text-white font-bold py-3.5 px-5 rounded-xl transition-colors">
+                        <span>Richiedi Lezione</span>
+                        <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Servizio 2: Pacchetto 10 Lezioni (Highlighted) -->
+                <div class="bg-white rounded-3xl p-8 border-2 border-amber shadow-xl card-hover flex flex-col justify-between relative">
+                    <div class="absolute -top-4 right-6 bg-amber text-white text-xs font-extrabold uppercase tracking-wider px-4 py-1.5 rounded-full shadow">
+                        Più Scelto • Risparmi 50€
+                    </div>
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-amber-soft text-amber flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-award text-2xl"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-slate mb-2">Pacchetto 10 Lezioni</h3>
+                        <div class="flex items-baseline gap-2 my-4">
+                            <span class="font-heading text-4xl font-extrabold text-slate">150€</span>
+                            <span class="text-sm font-bold text-amber bg-amber-soft px-2.5 py-0.5 rounded-lg">15€ a lezione</span>
+                        </div>
+                        <p class="text-slate-muted text-sm leading-relaxed mb-6">
+                            Un percorso completo, graduale e strutturato per consolidare la relazione, migliorare la comunicazione e raggiungere risultati duraturi.
+                        </p>
+                        <ul class="space-y-3 text-sm text-slate mb-8">
+                            <li class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-circle-check text-forest"></i>
+                                <span>10 incontri individuali personalizzati</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-circle-check text-forest"></i>
+                                <span>Supporto costante tra una lezione e l'altra</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-circle-check text-forest"></i>
+                                <span>Lavoro progressivo su fiducia e autocontrollo</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-circle-check text-forest"></i>
+                                <span>Adatto a cuccioli e cani adulti</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/393281224016?text=Ciao%20Giacomo%2C%20sono%20interessato%20al%20Pacchetto%2010%20Lezioni%20da%20150%E2%82%AC." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-amber hover:bg-amber-hover text-white font-bold py-3.5 px-5 rounded-xl shadow-md transition-colors">
+                        <span>Scegli il Pacchetto</span>
+                        <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Servizio 3: Consulenza Online a Distanza -->
+                <div class="bg-white rounded-3xl p-8 border border-stone-200/80 shadow-sm card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-forest-soft text-forest flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-laptop-house text-2xl"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-slate mb-2">Consulenza Online a Distanza</h3>
+                        <div class="flex items-baseline gap-1 my-4">
+                            <span class="font-heading text-3xl font-extrabold text-forest">In tutta Italia</span>
+                        </div>
+                        <p class="text-slate-muted text-sm leading-relaxed mb-6">
+                            Vivi lontano dalla Puglia? Nessun problema! Ti seguo passo dopo passo tramite videochiamata e analisi video.
+                        </p>
+                        <ul class="space-y-3 text-sm text-slate mb-8">
+                            <li class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-circle-check text-forest"></i>
+                                <span>Incontri comodi via WhatsApp, Meet o Zoom</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-circle-check text-forest"></i>
+                                <span>Analisi di video della vostra quotidianità</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-circle-check text-forest"></i>
+                                <span>Schede pratiche ed esercizi mirati</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/393281224016?text=Ciao%20Giacomo%2C%20vorrei%20informazioni%20per%20una%20Consulenza%20Online%20a%20distanza." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-forest hover:bg-forest-dark text-white font-bold py-3.5 px-5 rounded-xl transition-colors">
+                        <span>Prenota Online</span>
+                        <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: CONSULENZE -->
+    <section id="consulenze" class="py-20 bg-white border-y border-stone-200/70">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-xs font-bold uppercase tracking-widest text-amber">Capire per risolvere</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate mt-2">Consulenze Cinofili</h2>
+                <p class="text-slate-muted mt-4 text-base sm:text-lg">
+                    Ogni binomio è unico. Partiamo sempre dall'ascolto della vostra storia per costruire strategie rispettose ed efficaci.
+                </p>
+            </div>
+
+            <!-- Featured Free Consultation Banner -->
+            <div class="bg-gradient-to-r from-forest to-forest-dark rounded-3xl p-8 sm:p-10 text-white shadow-xl mb-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-8">
+                        <span class="inline-block bg-amber text-white text-xs font-extrabold uppercase tracking-wider px-3.5 py-1 rounded-full mb-4">
+                            100% Gratuita e Senza Impegno
+                        </span>
+                        <h3 class="font-heading text-2xl sm:text-3xl font-bold mb-3">
+                            Prima Consulenza Conoscitiva Online Gratuita (30 minuti)
+                        </h3>
+                        <p class="text-white/90 text-base leading-relaxed">
+                            Un incontro video di mezz'ora dedicato a conoscerci, ascoltare le tue esigenze, analizzare la situazione del tuo cane e della tua famiglia, e capire insieme qual è il percorso migliore per voi.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-4 flex lg:justify-end">
+                        <a href="https://wa.me/393281224016?text=Ciao%20Giacomo%2C%20vorrei%20prenotare%20la%20Prima%20Consulenza%20Conoscitiva%20Online%20Gratuita%20di%2030%20minuti!" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white text-forest hover:bg-cream font-extrabold px-6 py-4 rounded-2xl shadow-lg transition-all text-center">
+                            <i class="fa-brands fa-whatsapp text-xl text-green-600"></i>
+                            <span>Prenota i tuoi 30 min</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Behavioral & Management Consultations Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-cream p-6 rounded-2xl border border-stone-200/80">
+                    <div class="w-11 h-11 rounded-xl bg-forest-soft text-forest flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg text-slate mb-2">Lettura dei Segnali Calmanti</h4>
+                    <p class="text-sm text-slate-muted leading-relaxed">
+                        Impariamo a riconoscere come comunica il tuo cane attraverso il linguaggio del corpo per prevenire stress, disagio e incomprensioni.
+                    </p>
+                </div>
+
+                <div class="bg-cream p-6 rounded-2xl border border-stone-200/80">
+                    <div class="w-11 h-11 rounded-xl bg-amber-soft text-amber flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-route"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg text-slate mb-2">Gestione al Guinzaglio</h4>
+                    <p class="text-sm text-slate-muted leading-relaxed">
+                        Trasformiamo la passeggiata da un momento di tensione a un'esperienza piacevole, collaborativa e rilassante per entrambi.
+                    </p>
+                </div>
+
+                <div class="bg-cream p-6 rounded-2xl border border-stone-200/80">
+                    <div class="w-11 h-11 rounded-xl bg-forest-soft text-forest flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-baby-carriage"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg text-slate mb-2">Inserimento Cucciolo</h4>
+                    <p class="text-sm text-slate-muted leading-relaxed">
+                        Consulenza pre e post adozione per preparare la casa, gestire i primi giorni e impostare subito una convivenza serena.
+                    </p>
+                </div>
+
+                <div class="bg-cream p-6 rounded-2xl border border-stone-200/80">
+                    <div class="w-11 h-11 rounded-xl bg-amber-soft text-amber flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg text-slate mb-2">Autocontrollo e Calma</h4>
+                    <p class="text-sm text-slate-muted leading-relaxed">
+                        Aiutiamo il cane a gestire l'eccitazione, l'impulsività e la frustrazione attraverso esercizi cognitivi e giochi di attivazione mentale.
+                    </p>
+                </div>
+
+                <div class="bg-cream p-6 rounded-2xl border border-stone-200/80">
+                    <div class="w-11 h-11 rounded-xl bg-forest-soft text-forest flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-house-circle-check"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg text-slate mb-2">Problemi Quotidiani</h4>
+                    <p class="text-sm text-slate-muted leading-relaxed">
+                        Abbaio eccessivo, difficoltà a restare solo, gestione degli ospiti in casa: affrontiamo ogni sfida esclusivamente con metodo gentile.
+                    </p>
+                </div>
+
+                <div class="bg-cream p-6 rounded-2xl border border-stone-200/80">
+                    <div class="w-11 h-11 rounded-xl bg-amber-soft text-amber flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg text-slate mb-2">Adozione Cane Adulto / Canile</h4>
+                    <p class="text-sm text-slate-muted leading-relaxed">
+                        Supporto dedicato per accompagnare con delicatezza un cane proveniente dal canile o da un rifugio nella sua nuova vita in famiglia.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: PERCORSI EDUCATIVI -->
+    <section id="percorsi-educativi" class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-xs font-bold uppercase tracking-widest text-forest">Crescere insieme passo dopo passo</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate mt-2">Percorsi Educativi</h2>
+                <p class="text-slate-muted mt-4 text-base sm:text-lg">
+                    Programmi strutturati basati sul rinforzo positivo, sulla cooperazione e sul benessere psicofisico del cane.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Percorso 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden border border-stone-200/80 shadow-sm card-hover flex flex-col">
+                    <div class="h-3 bg-forest"></div>
+                    <div class="p-8 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block text-xs font-bold uppercase tracking-wider text-forest bg-forest-soft px-3 py-1 rounded-full mb-4">
+                                Tutte le età
+                            </span>
+                            <h3 class="font-heading text-2xl font-bold text-slate mb-3">Educazione di Base e Relazione</h3>
+                            <p class="text-slate-muted text-sm leading-relaxed mb-6">
+                                Costruiamo le fondamenta di una comunicazione chiara tra te e il tuo cane, basata sulla fiducia reciproca e mai sulla coercizione.
+                            </p>
+                            <ul class="space-y-3 text-sm text-slate mb-6">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-forest mt-1"></i>
+                                    <span>Comunicazione non verbale e ascolto attivo</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-forest mt-1"></i>
+                                    <span>Richiamo affidabile e attenzione sul proprietario</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-forest mt-1"></i>
+                                    <span>Rinforzo positivo e cooperazione spontanea</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-forest mt-1"></i>
+                                    <span>Gestione serena degli ambienti urbani e naturali</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#contatti" class="inline-flex items-center gap-2 text-forest font-bold text-sm hover:underline">
+                            <span>Chiedi informazioni su questo percorso</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Percorso 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden border border-stone-200/80 shadow-sm card-hover flex flex-col">
+                    <div class="h-3 bg-amber"></div>
+                    <div class="p-8 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block text-xs font-bold uppercase tracking-wider text-amber bg-amber-soft px-3 py-1 rounded-full mb-4">
+                                Da 0 a 6 Mesi
+                            </span>
+                            <h3 class="font-heading text-2xl font-bold text-slate mb-3">Percorso Cucciolo</h3>
+                            <p class="text-slate-muted text-sm leading-relaxed mb-6">
+                                I primi mesi sono fondamentali per lo sviluppo caratteriale del cane. Accompagniamo il cucciolo alla scoperta del mondo in sicurezza.
+                            </p>
+                            <ul class="space-y-3 text-sm text-slate mb-6">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-amber mt-1"></i>
+                                    <span>Socializzazione corretta con persone, cani e stimoli</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-amber mt-1"></i>
+                                    <span>Prime regole domestiche, bisogni e gestione del morso</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-amber mt-1"></i>
+                                    <span>Prevenzione delle paure e delle insicurezze future</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-amber mt-1"></i>
+                                    <span>Abitudine serena a pettorina, guinzaglio e manipolazione</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#contatti" class="inline-flex items-center gap-2 text-amber font-bold text-sm hover:underline">
+                            <span>Inizia con il tuo cucciolo</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Percorso 3 -->
+                <div class="bg-white rounded-3xl overflow-hidden border border-stone-200/80 shadow-sm card-hover flex flex-col">
+                    <div class="h-3 bg-forest"></div>
+                    <div class="p-8 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block text-xs font-bold uppercase tracking-wider text-forest bg-forest-soft px-3 py-1 rounded-full mb-4">
+                                Equilibrio & Benessere
+                            </span>
+                            <h3 class="font-heading text-2xl font-bold text-slate mb-3">Gestione Emozionale e Autocontrollo</h3>
+                            <p class="text-slate-muted text-sm leading-relaxed mb-6">
+                                Un percorso mirato a sviluppare le competenze cognitive ed emotive del cane, aiutandolo a trovare calma e concentrazione.
+                            </p>
+                            <ul class="space-y-3 text-sm text-slate mb-6">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-forest mt-1"></i>
+                                    <span>Esercizi di <strong>Doggy Zen</strong> e gestione della frustrazione</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-forest mt-1"></i>
+                                    <span>Regolazione dell'arousal (livello di eccitazione)</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-forest mt-1"></i>
+                                    <span>Attività olfattive e ricerca per appagare la mente</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-forest mt-1"></i>
+                                    <span>Aumento dell'autostima e della capacità di problem solving</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#contatti" class="inline-flex items-center gap-2 text-forest font-bold text-sm hover:underline">
+                            <span>Scopri il percorso emozionale</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: CONTATTI & COMMUNITY -->
+    <section id="contatti" class="py-20 bg-white border-t border-stone-200/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-xs font-bold uppercase tracking-widest text-amber">Parliamone insieme</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate mt-2">Contatti & Canali Social</h2>
+                <p class="text-slate-muted mt-4 text-base sm:text-lg">
+                    Scrivimi su WhatsApp, inviami una mail o unisciti alla nostra community dedicata al mondo del cane.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                <!-- Left Column: Direct Contacts & Social Links -->
+                <div class="lg:col-span-6 space-y-6">
+                    <!-- Direct Info Cards -->
+                    <div class="bg-cream p-6 sm:p-8 rounded-3xl border border-stone-200/80 space-y-5">
+                        <h3 class="font-heading font-bold text-xl text-slate">Recapiti Diretti</h3>
+                        
+                        <a href="https://wa.me/393281224016" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-stone-200 hover:border-green-500 transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-green-100 text-green-700 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold uppercase tracking-wider text-slate-muted">WhatsApp & Telefono</p>
+                                <p class="font-heading font-bold text-lg text-slate">+39 328 122 4016</p>
+                            </div>
+                        </a>
+
+                        <a href="mailto:giacomo.giustoeducatorecinofil@gmail.com" class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-stone-200 hover:border-forest transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-forest-soft text-forest flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                                <i class="fa-regular fa-envelope text-xl"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <p class="text-xs font-bold uppercase tracking-wider text-slate-muted">Email</p>
+                                <p class="font-semibold text-sm sm:text-base text-slate break-all">giacomo.giustoeducatorecinofil@gmail.com</p>
+                            </div>
+                        </a>
+
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-stone-200">
+                            <div class="w-12 h-12 rounded-xl bg-amber-soft text-amber flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-map-location-dot text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold uppercase tracking-wider text-slate-muted">Zona Operativa</p>
+                                <p class="font-semibold text-sm sm:text-base text-slate">Acquaviva delle Fonti (BA) e dintorni + Online in tutta Italia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social & Community Links -->
+                    <div class="bg-cream p-6 sm:p-8 rounded-3xl border border-stone-200/80">
+                        <h3 class="font-heading font-bold text-xl text-slate mb-2">Seguimi e Unisciti alla Community</h3>
+                        <p class="text-sm text-slate-muted mb-5">Trovi consigli, video e uno spazio di confronto aperto a tutti gli amanti dei cani:</p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <a href="https://www.youtube.com/@giacomogiustoeducatorecinofilo" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-stone-200 hover:border-red-500 transition-colors">
+                                <i class="fa-brands fa-youtube text-red-600 text-xl w-6 text-center"></i>
+                                <span class="font-semibold text-sm text-slate">Canale YouTube</span>
+                            </a>
+
+                            <a href="https://www.instagram.com/giacomogiusto_dog_trainer" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-stone-200 hover:border-pink-500 transition-colors">
+                                <i class="fa-brands fa-instagram text-pink-600 text-xl w-6 text-center"></i>
+                                <span class="font-semibold text-sm text-slate">Instagram</span>
+                            </a>
+
+                            <a href="https://www.facebook.com/profile.php?id=100086955996812" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-stone-200 hover:border-blue-600 transition-colors">
+                                <i class="fa-brands fa-facebook text-blue-600 text-xl w-6 text-center"></i>
+                                <span class="font-semibold text-sm text-slate">Pagina Facebook</span>
+                            </a>
+
+                            <a href="https://www.facebook.com/groups/624438556322436" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-stone-200 hover:border-blue-500 transition-colors">
+                                <i class="fa-solid fa-users text-blue-600 text-lg w-6 text-center"></i>
+                                <span class="font-semibold text-sm text-slate">Gruppo Facebook</span>
+                            </a>
+
+                            <a href="https://chat.whatsapp.com/CYwstQGppco4CDoX50qv9r" target="_blank" rel="noopener noreferrer" class="sm:col-span-2 flex items-center justify-center gap-3 p-3.5 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-sm transition-colors shadow-sm">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                                <span>Entra nel Gruppo Community WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Message Composer -->
+                <div class="lg:col-span-6">
+                    <div class="bg-cream p-6 sm:p-8 rounded-3xl border border-stone-200/80 shadow-sm h-full flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-heading font-bold text-2xl text-slate mb-2">Scrivimi un messaggio rapido</h3>
+                            <p class="text-sm text-slate-muted mb-6">
+                                Compila i campi qui sotto: preparerò automaticamente il messaggio pronto da inviare su WhatsApp o via Email.
+                            </p>
+
+                            <form id="contact-composer" class="space-y-4">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label for="owner-name" class="block text-xs font-bold uppercase tracking-wider text-slate mb-1.5">Il tuo Nome *</label>
+                                        <input type="text" id="owner-name" required placeholder="Es. Marco" class="w-full px-4 py-3 rounded-xl bg-white border border-stone-300 text-slate focus:outline-none focus:ring-2 focus:ring-forest text-sm">
+                                    </div>
+                                    <div>
+                                        <label for="dog-name" class="block text-xs font-bold uppercase tracking-wider text-slate mb-1.5">Nome ed età del cane</label>
+                                        <input type="text" id="dog-name" placeholder="Es. Luna, 8 mesi" class="w-full px-4 py-3 rounded-xl bg-white border border-stone-300 text-slate focus:outline-none focus:ring-2 focus:ring-forest text-sm">
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label for="city" class="block text-xs font-bold uppercase tracking-wider text-slate mb-1.5">Comune / Modalità</label>
+                                        <input type="text" id="city" placeholder="Es. Acquaviva / Online" class="w-full px-4 py-3 rounded-xl bg-white border border-stone-300 text-slate focus:outline-none focus:ring-2 focus:ring-forest text-sm">
+                                    </div>
+                                    <div>
+                                        <label for="service-select" class="block text-xs font-bold uppercase tracking-wider text-slate mb-1.5">Servizio di interesse</label>
+                                        <select id="service-select" class="w-full px-4 py-3 rounded-xl bg-white border border-stone-300 text-slate focus:outline-none focus:ring-2 focus:ring-forest text-sm">
+                                            <option value="Prima Consulenza Conoscitiva Gratuita (30 min)">Consulenza Gratuita (30 min)</option>
+                                            <option value="Lezione Individuale a Domicilio (20€)">Lezione a Domicilio (20€)</option>
+                                            <option value="Pacchetto 10 Lezioni (150€)">Pacchetto 10 Lezioni (150€)</option>
+                                            <option value="Consulenza Online a Distanza">Consulenza Online a Distanza</option>
+                                            <option value="Percorso Cucciolo">Percorso Cucciolo</option>
+                                            <option value="Educazione di Base / Gestione Emozionale">Educazione di Base / Emozionale</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="message-text" class="block text-xs font-bold uppercase tracking-wider text-slate mb-1.5">Raccontami brevemente cosa vorresti migliorare *</label>
+                                    <textarea id="message-text" rows="4" required placeholder="Scrivi qui le tue esigenze o domande..." class="w-full px-4 py-3 rounded-xl bg-white border border-stone-300 text-slate focus:outline-none focus:ring-2 focus:ring-forest text-sm"></textarea>
+                                </div>
+
+                                <!-- Feedback Banner -->
+                                <div id="form-feedback" class="hidden p-3.5 rounded-xl bg-amber-soft text-amber-900 text-xs font-semibold"></div>
+
+                                <div class="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <button type="button" id="send-whatsapp-btn" class="w-full inline-flex items-center justify-center gap-2 bg-forest hover:bg-forest-dark text-white font-bold py-3.5 px-5 rounded-xl shadow transition-all text-sm">
+                                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                                        <span>Invia su WhatsApp</span>
+                                    </button>
+                                    <button type="button" id="send-email-btn" class="w-full inline-flex items-center justify-center gap-2 bg-slate hover:bg-slate/90 text-white font-bold py-3.5 px-5 rounded-xl shadow transition-all text-sm">
+                                        <i class="fa-regular fa-envelope text-base"></i>
+                                        <span>Invia via Email</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <p class="text-xs text-slate-muted mt-6 text-center">
+                            Rispondo personalmente nel più breve tempo possibile.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate text-white pt-14 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-white/10">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-forest text-white flex items-center justify-center">
+                            <i class="fa-solid fa-paw text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="font-heading font-bold text-lg block leading-tight">Giacomo Giusto</span>
+                            <span class="text-xs text-amber font-semibold uppercase tracking-wider">Educatore Cinofilo</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-white/75 leading-relaxed">
+                        Costruiamo insieme una relazione serena, basata sul rispetto, l'empatia e il metodo gentile. A domicilio ad Acquaviva delle Fonti e online in tutta Italia.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-heading font-bold text-base uppercase tracking-wider text-white mb-4">Navigazione</h4>
+                    <ul class="space-y-2.5 text-sm text-white/80">
+                        <li><a href="#home-page" class="hover:text-amber transition-colors">Home Page</a></li>
+                        <li><a href="#chi-sono" class="hover:text-amber transition-colors">Chi Sono</a></li>
+                        <li><a href="#servizi" class="hover:text-amber transition-colors">Servizi e Tariffe</a></li>
+                        <li><a href="#consulenze" class="hover:text-amber transition-colors">Consulenze</a></li>
+                        <li><a href="#percorsi-educativi" class="hover:text-amber transition-colors">Percorsi Educativi</a></li>
+                        <li><a href="#contatti" class="hover:text-amber transition-colors">Contatti</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-heading font-bold text-base uppercase tracking-wider text-white mb-4">Seguimi sui Social</h4>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://www.youtube.com/@giacomogiustoeducatorecinofilo" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-red-600 flex items-center justify-center transition-colors" aria-label="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="https://www.instagram.com/giacomogiusto_dog_trainer" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-pink-600 flex items-center justify-center transition-colors" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=100086955996812" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-blue-600 flex items-center justify-center transition-colors" aria-label="Pagina Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.facebook.com/groups/624438556322436" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-blue-500 flex items-center justify-center transition-colors" aria-label="Gruppo Facebook">
+                            <i class="fa-solid fa-users"></i>
+                        </a>
+                        <a href="https://chat.whatsapp.com/CYwstQGppco4CDoX50qv9r" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-green-600 flex items-center justify-center transition-colors" aria-label="Community WhatsApp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                    <p class="text-xs text-white/60 mt-5">
+                        Tel / WhatsApp: +39 328 122 4016
+                    </p>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-white/60">
+                <p>&copy; <span id="current-year"></span> Giacomo Giusto Educatore Cinofilo. Tutti i diritti riservati.</p>
+                <p>Acquaviva delle Fonti (BA) • Metodo Gentile</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FOR NAVIGATION & INTERACTIVE CONTACT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Mobile Menu Toggle
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            function toggleMobileMenu() {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-xmark');
+                    mobileBtn.setAttribute('aria-expanded', 'true');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                    mobileBtn.setAttribute('aria-expanded', 'false');
+                }
+            }
+
+            mobileBtn.addEventListener('click', toggleMobileMenu);
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        toggleMobileMenu();
+                    }
+                });
+            });
+
+            // Scroll Spy for Active Navigation Link
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            function updateActiveNav() {
+                const scrollY = window.scrollY + 140;
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+
+                    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('nav-link-active');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('nav-link-active');
+                            }
+                        });
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', updateActiveNav, { passive: true });
+            updateActiveNav();
+
+            // Interactive Message Composer (WhatsApp & Email)
+            const whatsappBtn = document.getElementById('send-whatsapp-btn');
+            const emailBtn = document.getElementById('send-email-btn');
+            const feedbackBox = document.getElementById('form-feedback');
+
+            function buildComposedMessage() {
+                const name = document.getElementById('owner-name').value.trim();
+                const dog = document.getElementById('dog-name').value.trim();
+                const city = document.getElementById('city').value.trim();
+                const service = document.getElementById('service-select').value;
+                const msg = document.getElementById('message-text').value.trim();
+
+                if (!name || !msg) {
+                    feedbackBox.textContent = 'Per favore inserisci almeno il tuo nome e un breve messaggio prima di inviare.';
+                    feedbackBox.classList.remove('hidden');
+                    return null;
+                }
+
+                feedbackBox.classList.add('hidden');
+
+                let fullText = `Ciao Giacomo, mi chiamo ${name}.\n`;
+                if (dog) fullText += `Il mio cane: ${dog}.\n`;
+                if (city) fullText += `Zona / Modalità: ${city}.\n`;
+                fullText += `Servizio di interesse: ${service}.\n\n`;
+                fullText += `Messaggio:\n${msg}`;
+
+                return { name, service, fullText };
+            }
+
+            whatsappBtn.addEventListener('click', () => {
+                const data = buildComposedMessage();
+                if (!data) return;
+
+                const encodedText = encodeURIComponent(data.fullText);
+                const whatsappUrl = `https://wa.me/393281224016?text=${encodedText}`;
+                window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+            });
+
+            emailBtn.addEventListener('click', () => {
+                const data = buildComposedMessage();
+                if (!data) return;
+
+                const subject = encodeURIComponent(`Richiesta informazioni: ${data.service} - ${data.name}`);
+                const body = encodeURIComponent(data.fullText);
+                window.location.href = `mailto:giacomo.giustoeducatorecinofil@gmail.com?subject=${subject}&body=${body}`;
+            });
+        });
+    </script>
+</body>
+</html>
